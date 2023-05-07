@@ -1,142 +1,160 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins',sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  box-sizing: border-box;
 }
-.container{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg,#ffc87c, #02075d);
-    padding: 10px;
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffc87c, #02075d);
+  padding: 10px;
 }
-.todo-app{
-    width: 100%;
-    max-width: 540px;
-    background: #d2d2d2;
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: #d2d2d2;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
 }
-.todo-app h2{
-     color: #212A58;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin-bottom: 20px;
-     font-size: 30px;
+.todo-app h2 {
+  color: #212a58;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 30px;
 }
-.todo-app h5{
-    color: #443F69;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: large;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.todo-app h5 {
+  color: #443f69;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: large;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.todo-app h2 img{
-    width: 40px;
-    margin-left: 10px;
+.todo-app h2 img {
+  width: 40px;
+  margin-left: 10px;
 }
-.row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #edeef0;
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
 }
-input{
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
 }
-button{
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    background: #ff5945;
-    color: #fff;
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #ff5945;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+button:hover {
+  background: #228b22;
+  color: #fff;
+}
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 10px;
+  left: 8px;
+}
+ul li.checked {
+  color: #555;
+  text-decoration: line-through solid black;
+}
+ul li.checked::before {
+  background-image: url(images/check.png);
+}
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5;
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  color: #555;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li span:hover {
+  background: #f72331;
+}
+
+.Timer {
+  display: flex;
+  flex-direction: row;
+}
+.Time {
+  width: 25px;
+  height: 25px;
+}
+.Date-cal {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin-left: 250px;
+}
+.Calendar {
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width: 600px) {
+  button {
+    padding: 16px 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  button {
+    padding: 0px;
+    position: absolute;
+    left: 70%;
     font-size: 16px;
-    cursor: pointer;
-    border-radius: 40px;
-}
-button:hover{
-    background: #228B22;
-    color: #fff;
-}
-ul li{
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
-}
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    background-image: url(images/unchecked.png);
-    background-size: cover;
-    background-position: center;
-    top: 10px;
-    left: 8px;
-}
-ul li.checked{
-    color: #555;
-    text-decoration: line-through;
-}
-ul li.checked::before{
-    background-image: url(images/check.png);
-}
-ul li span{
-    position: absolute;
-    right: 0;
-    top: 5;
-    width: 25px;
-    height: 25px;
-    font-size: 25px;
-    color: #555;
-    line-height: 25px;
-    text-align: center;
-    border-radius: 50%;
-}
-ul li span:hover{
-    background: #F72331;
-}
-
-  .Timer{
-    display: flex; 
-    flex-direction: row;
+    height: 35px;
+    width: 50px;
+    border: none;
+    outline: none;
   }
-  .Time{
-    width: 25px;
-    height: 25px;
-  }
-
-
-  @media (max-width: 600px) {
-    button {
-        padding: 16px 30px;
-      }
 }
-
-@media(max-width: 320px){ 
-    button{
-        padding: 0px ;
-        position: absolute;
-        left: 70%;
-        font-size: 16px;
-        height: 35px;
-        width: 50px;
-        border: none;
-        outline: none
-        
-    }
+@media (max-width: 600px) {
+  .Date-cal {
+    margin-left: 80px;
   }
+}
+@media (max-width: 320px) {
+  .Date-cal {
+    margin-left: 20px;
+  }
+}
